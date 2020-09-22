@@ -7,7 +7,8 @@
 ## 機能
 - ブラウザ上で画像ファイルをアップロードする
 
-![Getting Started](upload_image_laravel_demo.gif)
+<img width="600" src="upload_image_laravel_demo.gif">
+
 
 ## DB
 - MySQL
