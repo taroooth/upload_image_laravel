@@ -7,8 +7,5 @@
 ## 機能
 - ブラウザ上で画像ファイルをアップロードする
 
-<img width="600" src="upload_image_laravel_demo.gif">
-
-
 ## DB
 - SQLite
