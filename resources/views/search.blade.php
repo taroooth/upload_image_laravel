@@ -26,9 +26,9 @@
       </form>
 
       <h2>IDで検索</h2>
-      <form action="{{route('searchId')}}" method="POST">
+      <form action="{{route('searchId')}}" method="post">
         @csrf
-        <input type="text" name="id">
+      <input type="text" name="id">
         <br>
         <input type="submit" value="検索">
       </form>
@@ -53,13 +53,12 @@
     </div>
     <hr class="cp_hr01" />
 
-    <h1>過去のアップロード</h1>
+    <h1>検索結果</h1>
     <div class="image">
-        @foreach($image as $i)
-        @if($i!=null)
-        <img src="storage/images/{{$i->image}}">
+        @if($image!=null)
+        <img src="storage/app/public/images/{{$image}}">
+    <p>{{$image}}</p>
         @endif
-        @endforeach
       </div>
       <hr class="cp_hr01" />
     </body>

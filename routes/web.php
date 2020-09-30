@@ -2,23 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/index','App\Http\Controllers\PostController@index')->name('index');
+Route::post('/store','App\Http\Controllers\PostController@store')->name('store');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/home', 'App\Http\Controllers\HomeController@index');
-// Route::get('/home', function() {
-//     return view('index');
-// });
-Route::post('/home', 'App\Http\Controllers\HomeController@store');
-Route::post('/upload', 'App\Http\Controllers\HomeController@upload');
+// Route::get('/search/find','App\Http\Controllers\PostController@find')->name('find');
+Route::post('/search/id','App\Http\Controllers\PostController@searchId')->name('searchId');
+Route::post('/search/date','App\Http\Controllers\PostController@searchDate')->name('searchDate');
+Route::post('/delete','App\Http\Controllers\PostController@deleteId')->name('deleteId');
