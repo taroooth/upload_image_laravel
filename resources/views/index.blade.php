@@ -18,6 +18,7 @@
       </div>
       @endif
 
+      <h2>画像を選択</h2>
       <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="file" name="image">
@@ -56,7 +57,8 @@
     <h1>過去のアップロード</h1>
     <div class="image">
         @foreach($image as $i)
-        @if($i!=null)
+        @if ($i!=null)
+        <p class="id_text">ID: {{$i->id}}</p>
         <img src="storage/images/{{$i->image}}">
         @endif
         @endforeach
@@ -67,6 +69,7 @@
 
 <style>
 h1 {text-align: center}
+.id_text {text-align: center}
 img{
   width:30%;
   height:30%;

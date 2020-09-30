@@ -5,7 +5,7 @@
         <title>Laravel</title>
     </head>
     <body>
-    <h1>画像アップロードフォーム</h1>
+    <h1>検索フォーム</h1>
     <div class="form">
 
       @if(count($errors)>0)
@@ -18,12 +18,7 @@
       </div>
       @endif
 
-      <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="file" name="image">
-        <br>
-        <input type="submit" value="保存">
-      </form>
+      <h2><a href="/index">画像アップロードフォームへ</a></h2>
 
       <h2>IDで検索</h2>
       <form action="{{route('searchId')}}" method="post">
@@ -56,8 +51,17 @@
     <h1>検索結果</h1>
     <div class="image">
         @if($image!=null)
-        <img src="storage/app/public/images/{{$image}}">
-    <p>{{$image}}</p>
+        <form action="{{route('updateId')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="text" name="id" value="{{$image->id}}">
+            <br>
+            <input type="file" name="image">
+            <br>
+            <input type="submit" value="画像を変更">
+        </form>
+        <img src="/storage/images/{{$image->image}}">
+        @else
+        <p class="id_text">該当データ無し</p>
         @endif
       </div>
       <hr class="cp_hr01" />
@@ -66,6 +70,7 @@
 
 <style>
 h1 {text-align: center}
+.id_text {text-align: center}
 img{
   width:30%;
   height:30%;
