@@ -11,4 +11,4 @@
 
 
 ## DB
-- MySQL
+- SQLite
