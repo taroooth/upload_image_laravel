@@ -51,7 +51,6 @@ class PostController extends Controller
         return view('search', ['image' => $post]);
     }
 
-    
     // public function searchDate(Request $request) {
     //     // $date = $request->updated_at;
     //     // $image = Post::where('updated_at', $date)->get();
